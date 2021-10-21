@@ -16,7 +16,13 @@ class MainContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        data: state.main.data
+        temp: state.main.temp,
+        feelsLike: state.main.feelsLike,
+        pressure: state.main.pressure,
+        main: state.main.main,
+        description: state.main.description,
+        city: state.main.city,
+        icon: state.main.icon,
     }
 }
 

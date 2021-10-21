@@ -1,0 +1,71 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+a {
+}
+h1 {
+    font-size: 40px;
+    line-height: 1;
+    margin: 0px 0px 50px 0px;
+}
+h2 {
+    font-size: 30px;
+    line-height: 1;
+    margin: 0px 0px 20px 0px;
+}
+ul {
+    list-style: none;
+}
+/* ================ */
+
+
+/* flex-контейнер */
+.wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    padding: 25px 50px;
+    margin: auto;
+    width: 60%;
+
+}
+
+.header{
+
+
+
+
+    background: red;
+}
+.header__logo {
+    width: 150px;
+    align-self: center;
+}
+.heading{
+    align-self: end;
+}
+.sidebar{
+    flex: 0 1 20%;
+}
+
+.main{
+    flex: 0 1 80%;
+}
+.main__citys {
+    margin: 0 0 20px 0;
+}
+
+.main__search {
+    border: 1px solid #000;
+}

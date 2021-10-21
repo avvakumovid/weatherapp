@@ -4,7 +4,13 @@ const GET_WEATHER_DATA = 'GET_WEATHER_DATA'
 
 
 let initialstate = {
-    data: null
+    temp: 0,
+    feelsLike: 0,
+    pressure: 0,
+    main: '',
+    description: '',
+    city: '',
+    icon: ''
 }
 
 const mainReducer = (state = initialstate, action) => {
@@ -12,7 +18,7 @@ const mainReducer = (state = initialstate, action) => {
         case GET_WEATHER_DATA:
         return {
             ...state,
-            data: action.data
+            ...action.data
         }
         default: {
             return state
@@ -25,10 +31,19 @@ export default mainReducer;
 export const getWeatherData = (city) => {
     return (dispatch) => {
         DataAPI.getData(city).then(response => {
-            dispatch(weatherDataToState(response))
+            debugger
+            dispatch(weatherDataToState(response.main.temp,
+                                        response.main.feels_like,
+                                        response.main.pressure,
+                                        response.weather[0].main,
+                                        response.weather[0].description,
+                                        response.name,
+                                        response.weather[0].icon,
+
+                ))
         });
 
     }
 }
 
-export let weatherDataToState = (data) => ({type: GET_WEATHER_DATA, data})
+export let weatherDataToState = (temp, feelsLike, pressure, main, description, city, icon) => ({type: GET_WEATHER_DATA, data: {temp, feelsLike, pressure, main,  description, city,icon}})
