@@ -9,7 +9,7 @@ let initialstate = {
 
 const mainReducer = (state = initialstate, action) => {
     switch (action.type){
-        case 'GET_WEATHER_DATA':
+        case GET_WEATHER_DATA:
         return {
             ...state,
             data: action.data
@@ -24,9 +24,11 @@ export default mainReducer;
 
 export const getWeatherData = (city) => {
     return (dispatch) => {
-        let data = DataAPI.getData(city).then(response => response);
-        dispatch(weatherDataToState(data))
+        DataAPI.getData(city).then(response => {
+            dispatch(weatherDataToState(response))
+        });
+
     }
 }
 
-export let weatherDataToState = (data) => ({type: GET_WEATHER_DATA}, data)
+export let weatherDataToState = (data) => ({type: GET_WEATHER_DATA, data})
