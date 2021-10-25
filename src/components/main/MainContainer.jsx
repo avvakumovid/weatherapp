@@ -5,10 +5,10 @@ import {getWeatherData} from "../../redux/reducers/mainReducer";
 
 
 class MainContainer extends React.Component {
-    componentDidMount() {
-        this.props.getWeatherData('Moscow')
-    }
 
+    componentDidMount() {
+        this.props.getData('Moscow')
+    }
     render() {
         return <Main {...this.props}/>
     }
@@ -23,8 +23,8 @@ let mapStateToProps = (state) => {
         description: state.main.description,
         city: state.main.city,
         icon: state.main.icon,
-        searchingText: state.main.searchingText
+        searchingText: state.search.city
     }
 }
 
-export default connect(mapStateToProps, {getWeatherData})(MainContainer)
+export default connect(mapStateToProps, {getData: getWeatherData})(MainContainer)

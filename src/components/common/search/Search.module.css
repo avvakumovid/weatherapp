@@ -1,13 +1,7 @@
-.main{
-    flex: 0 1 70%;
-}
-.citys {
+.cites {
     margin: 0 0 20px 0;
 }
 
 .search {
     border: 1px solid #000;
-}
-.info {
-
 }
