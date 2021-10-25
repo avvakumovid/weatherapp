@@ -3,13 +3,13 @@
     flex-wrap:wrap;
     align-self: baseline;
     justify-content: space-around;
-    background: #f7f8f7;
+    background: #d7ecff;
     margin-bottom: 30px;
 
 }
 .logo {
     width: 150px;
-    align-self: center;
+    align-self: start;
 }
 .heading{
     align-self: end;

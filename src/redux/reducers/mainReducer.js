@@ -1,6 +1,7 @@
-import {DataAPI} from "../../API/API";
+import {CurrentWeatherAPI} from "../../API/API";
 
 const GET_WEATHER_DATA = 'GET_WEATHER_DATA'
+
 
 
 let initialstate = {
@@ -10,7 +11,8 @@ let initialstate = {
     main: '',
     description: '',
     city: '',
-    icon: ''
+    icon: '',
+    searchingText: ''
 }
 
 const mainReducer = (state = initialstate, action) => {
@@ -30,8 +32,7 @@ export default mainReducer;
 
 export const getWeatherData = (city) => {
     return (dispatch) => {
-        DataAPI.getData(city).then(response => {
-            debugger
+        CurrentWeatherAPI.getData(city).then(response => {
             dispatch(weatherDataToState(response.main.temp,
                                         response.main.feels_like,
                                         response.main.pressure,
@@ -46,4 +47,8 @@ export const getWeatherData = (city) => {
     }
 }
 
-export let weatherDataToState = (temp, feelsLike, pressure, main, description, city, icon) => ({type: GET_WEATHER_DATA, data: {temp, feelsLike, pressure, main,  description, city,icon}})
+
+export let weatherDataToState = (temp, feelsLike, pressure, main, description, city, icon) =>
+    ({type: GET_WEATHER_DATA, data: {temp, feelsLike, pressure, main,  description, city,icon}})
+
+

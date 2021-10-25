@@ -23,6 +23,7 @@ let mapStateToProps = (state) => {
         description: state.main.description,
         city: state.main.city,
         icon: state.main.icon,
+        searchingText: state.main.searchingText
     }
 }
 
