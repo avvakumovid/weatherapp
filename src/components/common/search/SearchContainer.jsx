@@ -15,7 +15,7 @@ class SearchContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-    data: state.weatherForecast.data,
+   // data: state.weatherForecast.data,
     }
 }
 

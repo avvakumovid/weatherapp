@@ -1,9 +1,9 @@
-import {CurrentWeatherAPI, DataAPI} from "../../API/API";
+import {CurrentWeatherAPI} from "../../API/API";
 
 const GET_WEATHER_DATA = 'GET_WEATHER_DATA'
 
 
-let initialstate = {
+let initialState = {
     temp: 0,
     feelsLike: 0,
     pressure: 0,
@@ -13,13 +13,12 @@ let initialstate = {
     icon: ''
 }
 
-const mainReducer = (state = initialstate, action) => {
+const mainReducer = (state = initialState, action) => {
     switch (action.type){
 
         case GET_WEATHER_DATA:
 
         return {
-
             ...state,
             ...action.data
         }
