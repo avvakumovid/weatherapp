@@ -28,7 +28,6 @@ export const weatherForecastReducer = (state = initialState, action) => {
 
 export const getWeatherforecast = (city) => {
     return (dispatch) => {
-
         WeatherForecastAPI.getForecast(city).then(response => {
             dispatch(weatherForecast(response.list, response.city.name))
         })

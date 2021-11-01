@@ -8,6 +8,7 @@ const Main = (props) => {
             <div className={style.info}>
                 <h2>{props.city} <img alt={''} src={`http://openweathermap.org/img/wn/${props.icon}@2x.png`}/></h2>
                 <ul>
+
                     <li>Temperature: {props.temp} °C</li>
                     <li>Feels like: {props.feelsLike} °C</li>
                     <li>Atmospheric pressure: {props.pressure} mmhg</li>

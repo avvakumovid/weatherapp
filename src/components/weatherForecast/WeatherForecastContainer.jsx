@@ -16,8 +16,8 @@ class WeatherForecastContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.data,
-        city: state.search.city,
+        data: state.weatherForecast.data,
+        city: state.weatherForecast.city,
         searchingText: state.search.city
     }
 }

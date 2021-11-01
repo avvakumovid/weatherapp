@@ -17,7 +17,7 @@ const mainReducer = (state = initialstate, action) => {
     switch (action.type){
 
         case GET_WEATHER_DATA:
-            debugger
+
         return {
 
             ...state,
